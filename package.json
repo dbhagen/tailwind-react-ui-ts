@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": {
-    "name" : "Ernesto Freyre",
+    "name": "Ernesto Freyre",
     "email": "ernestofreyreg@gmail.com",
     "url": "https://medium.com/@efreyreg"
   },
@@ -72,5 +72,20 @@
       "afterAll",
       "jest"
     ]
+  },
+  "dependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/lodash.get": "^4.4.6",
+    "@types/lodash.includes": "^4.3.6",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/lodash.uniqueid": "^4.0.6",
+    "@types/react-transition-group": "^4.4.0",
+    "classnames": "^2.2.6",
+    "lodash.get": "^4.4.2",
+    "lodash.includes": "^4.3.0",
+    "lodash.merge": "^4.6.2",
+    "lodash.uniqueid": "^4.0.1",
+    "react-transition-group": "^4.4.1",
+    "utility-types": "^3.10.0"
   }
 }

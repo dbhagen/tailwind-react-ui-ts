@@ -6,7 +6,7 @@ This is a template repo. just clone it, export it and rename to set your own com
 
 To install dependencies
 ``` 
-$ yarn install
+$ yarn
 ```
 
 To build
