@@ -27,7 +27,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: npm install
+          command: yarn
 
       - save_cache:
           paths:
@@ -36,19 +36,19 @@ jobs:
 
       - run:
           name: Lint code
-          command: npm run lint
+          command: yarn lint
 
       - run:
           name: Run unit tests
-          command: npm test
+          command: yarn test
 
       - run:
           name: Run build
-          command: npm run build
+          command: yarn build
 
       - run:
           name: Run styleguide generation
-          command: npm run docs
+          command: yarn build:storybook
 
       - persist_to_workspace:
           root: ./
