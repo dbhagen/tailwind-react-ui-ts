@@ -5,7 +5,7 @@ import { withTheme } from '../theme'
 import { Touchable } from '../primitives'
 import { getColorShade } from '../tailwind'
 
-const Button = ({
+export const Button = ({
   theme,
   is,
   children,
