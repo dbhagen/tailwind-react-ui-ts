@@ -1,17 +1,18 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { withTheme } from '../theme'
-import { filterProps } from '../utils'
-import { getTailwindClassNames, tailwindProps } from '../tailwind'
+// import { withTheme } from '../theme'
+// import { filterProps } from '../utils'
+// import { getTailwindClassNames, tailwindProps } from '../tailwind'
+import { getTailwindClassNames } from '../tailwind'
 
 export type BaseType = {
-  theme: {}
-  is?: string | React.FunctionComponent | React.Component
-  children?: React.ReactNode
+  theme: Object
+  is: string | React.FunctionComponent | React.Component
+  children?: React.ReactNode | React.ReactNode[]
   className?: string
   focusable: boolean
-  innerRef?: (() => {}) | {}
+  innerRef?: Function | Object
 }
 
 const Base: React.FunctionComponent<BaseType> = ({
@@ -23,11 +24,11 @@ const Base: React.FunctionComponent<BaseType> = ({
   innerRef,
   ...rest
 }) => {
-  const Component = is
+  const WrappedComponent = is
 
   return (
-    <Component
-      {...filterProps(rest, tailwindProps)}
+    <WrappedComponent
+      // {...filterProps(rest, tailwindProps)}
       className={classnames(
         getTailwindClassNames(
           {
@@ -35,16 +36,17 @@ const Base: React.FunctionComponent<BaseType> = ({
             'outine-focus': 'none',
             'shadow-focus': 'outline',
           },
-          { prefix: theme.prefix },
+          // { prefix: theme.prefix },
         ),
         className,
       )}
       ref={innerRef}
     >
       {children}
-    </Component>
+    </WrappedComponent>
   )
 }
 
 export { Base as component }
-export default withTheme(Base)
+// export default withTheme(Base)
+export default Base

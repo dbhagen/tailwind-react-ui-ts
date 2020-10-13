@@ -1,5 +1,4 @@
-/* eslint-disable react/destructuring-assignment */
-import PropTypes from 'prop-types'
+/* teslint-disable react/destructuring-assignment */
 
 const display = {
   block: PropTypes.bool,

@@ -1,18 +1,36 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 
 import Base from './Base'
 
 const focusableElements = ['input', 'select', 'textarea', 'button', 'a']
 
-class Touchable extends PureComponent {
-  constructor(props) {
+export interface TouchableProps {
+  // is: string | Function | Object
+  is: string | React.FunctionComponent | React.Component
+  children?: React.ReactNode
+  // select: string
+  tabIndex?: number
+  disabled?: boolean
+  // onTouch?: (event?: React.KeyboardEvent) => {}
+  onTouch?: Function
+}
+
+class Touchable extends React.PureComponent<TouchableProps> {
+  static TouchableProps = {
+    is: 'button',
+    Children: undefined,
+    disabled: false,
+    tabIndex: undefined,
+    onTouch: undefined
+  }
+
+  constructor(props: TouchableProps) {
     super(props)
 
     this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
-  handleKeyPress(e) {
+  handleKeyPress(e: React.KeyboardEvent) {
     const { onTouch } = this.props
     if (
       onTouch &&
@@ -49,22 +67,6 @@ class Touchable extends PureComponent {
       </Base>
     )
   }
-}
-
-Touchable.propTypes = {
-  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
-  children: PropTypes.node,
-  disabled: PropTypes.bool,
-  tabIndex: PropTypes.number,
-  onTouch: PropTypes.func,
-}
-
-Touchable.defaultProps = {
-  is: 'button',
-  children: undefined,
-  disabled: false,
-  tabIndex: undefined,
-  onTouch: undefined,
 }
 
 export default Touchable

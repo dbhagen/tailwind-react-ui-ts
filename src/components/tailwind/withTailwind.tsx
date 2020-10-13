@@ -7,7 +7,7 @@ import tailwindProps from './tailwindProps'
 import getTailwindClassNames from './getTailwindClassNames'
 
 type withTailwindProps = {
-  ignore: []
+  ignore: string[]
 }
 
 const withTailwind = <P extends withTailwindProps>(WrappedComponent: React.ComponentType<P & withTailwindProps>, { ignore = [] } = {}) => {
