@@ -26,3 +26,15 @@ To run Storybook
 $ yarn storybook
 ```
 
+## Contributing
+
+Please see the [contributing](./CONTRIBUTING.md) guide.
+
+We want this to be a community project, please join in making this library useful for others.
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/dbhagen/tailwind-react-ui-ts/graphs/contributors">
+<img src="https://contributors-img.web.app/image?repo=dbhagen/tailwind-react-ui-ts" />
+</a>
