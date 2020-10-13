@@ -104,14 +104,23 @@ workflows:
   build-and-deploy:
     jobs:
       - build:
+          branches:
+            ignore:
+              - gh-pages
           filters:
             tags:
               only: /^v.*/
       - greenkeeperUpdateLockFile:
+          branches:
+            ignore:
+              - gh-pages
           filters:
             branches:
               only: /^greenkeeper\/.*/
       - deploy-and-publish:
+          branches:
+            ignore:
+              - gh-pages
           requires:
             - build
           filters:
