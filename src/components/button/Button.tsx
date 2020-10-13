@@ -5,7 +5,7 @@ import { themeType } from '../theme/withTheme'
 import { Touchable } from '../primitives'
 import { getColorShade } from '../tailwind'
 
-export type ButtonTypes = {
+export type ButtonProps = {
   theme: themeType
   is?: string | (() => {}) | {}
   children?: React.ReactNode
@@ -22,24 +22,7 @@ export type ButtonTypes = {
   border?: string | []
 }
 
-// Button.defaultProps = {
-//   is: 'button',
-//   children: undefined,
-//   color: 'primary',
-//   type: 'button',
-//   buttonStyle: 'fill',
-//   disabled: false,
-//   large: false,
-//   small: false,
-//   fullWidth: false,
-//   bg: undefined,
-//   text: undefined,
-//   border: undefined,
-//   brand: undefined,
-// }
-
-
-const Button: React.FunctionComponent<ButtonTypes> = ({
+const Button: React.FunctionComponent<ButtonProps> = ({
   theme,
   is = 'button',
   children = undefined,
@@ -61,6 +44,8 @@ const Button: React.FunctionComponent<ButtonTypes> = ({
     leading: 'tight',
     p: { x: theme.spacing.md, y: theme.spacing.sm },
     rounded: theme.radius,
+    bg: '',
+    text: '',
   }
 
   if (large) {
