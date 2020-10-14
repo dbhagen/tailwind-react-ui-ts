@@ -1,32 +1,63 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { withTheme } from '../theme'
 import { Touchable } from '../primitives'
 import { getColorShade } from '../tailwind'
 
-export const Button = ({
+export type ButtonProps = {
+  theme: any
+  is: string
+  children?: React.ReactNode
+  color?: string
+  type?: string
+  buttonStyle?: 'fill' | 'outline' | 'text' | 'link'
+  disabled?: boolean
+  large?: boolean
+  small?: boolean
+  fullWidth?: boolean
+  brand?: string
+  bg?: string | []
+  text?: string | []
+  border?: string | (string | boolean | undefined)[]
+  leading?: string
+  p?: number | {
+    x: string | number
+    y: string | number
+  }
+  rounded?: string
+  opacity?: number
+  underline?: boolean
+  role?: string
+  w?: string
+}
+
+export const Button: React.FunctionComponent<ButtonProps> = ({
   theme,
-  is,
-  children,
-  color,
-  type,
-  buttonStyle,
-  disabled,
-  large,
-  small,
-  fullWidth,
-  bg,
-  text,
-  border,
-  brand,
+  is = 'button',
+  children = undefined,
+  color = 'primary',
+  type = 'button',
+  buttonStyle = 'fill',
+  disabled = false,
+  large = false,
+  small = false,
+  fullWidth = false,
+  bg = undefined,
+  text = undefined,
+  border = undefined,
+  brand = undefined,
   ...rest
 }) => {
-  const props = {
+
+  const props: ButtonProps = {
+    theme: theme,
+    is: is,
+    type: 'fill',
     border: [true, 'transparent'],
     leading: 'tight',
     p: { x: theme.spacing.md, y: theme.spacing.sm },
     rounded: theme.radius,
+    opacity: 100
   }
 
   if (large) {
@@ -45,7 +76,6 @@ export const Button = ({
       )
       break
     case 'outline':
-      // eslint-disable-next-line react/prop-types
       props.border.push(brand ? theme.brandColors[brand] : border)
       props.text = brand ? theme.brandColors[brand] : border
       props['bg-hocus'] = brand ? theme.brandColors[brand] : border
@@ -88,43 +118,10 @@ export const Button = ({
   }
 
   return (
-    <Touchable is={is} inlineBlock {...props} {...rest}>
+    <Touchable inlineBlock {...props} {...rest}>
       {children}
     </Touchable>
   )
-}
-
-Button.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
-  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
-  children: PropTypes.node,
-  color: PropTypes.string,
-  type: PropTypes.string,
-  buttonStyle: PropTypes.oneOf(['fill', 'outline', 'text', 'link']),
-  disabled: PropTypes.bool,
-  large: PropTypes.bool,
-  small: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  brand: PropTypes.string,
-  bg: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  border: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-}
-
-Button.defaultProps = {
-  is: 'button',
-  children: undefined,
-  color: 'primary',
-  type: 'button',
-  buttonStyle: 'fill',
-  disabled: false,
-  large: false,
-  small: false,
-  fullWidth: false,
-  brand: undefined,
-  bg: undefined,
-  text: undefined,
-  border: undefined,
 }
 
 export { Button as component }

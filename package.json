@@ -88,6 +88,7 @@
     "lodash.includes": "^4.3.0",
     "lodash.merge": "^4.6.2",
     "lodash.uniqueid": "^4.0.1",
+    "param-case": "^3.0.3",
     "react-transition-group": "^4.4.1",
     "utility-types": "^3.10.0"
   }

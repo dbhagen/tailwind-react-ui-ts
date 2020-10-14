@@ -14,7 +14,7 @@ module.exports = {
         sourceLoaderOptions: null,
       }
     },
-    //   '@storybook/addon-viewport',
-    //   '@storybook/addon-a11y'
+    '@storybook/addon-viewport',
+    '@storybook/addon-a11y'
   ]
 }
