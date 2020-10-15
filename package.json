@@ -1,7 +1,7 @@
 {
-  "name": "my-module",
-  "version": "1.0.0",
-  "description": "My Component Library template",
+  "name": "tailwind-react-ui-ts",
+  "version": "0.1.0",
+  "description": "tailwind-react-ui-ts",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",

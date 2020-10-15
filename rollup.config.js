@@ -28,7 +28,9 @@ export default {
       rollupCommonJSResolveHack: true,
       exclude: [
         '**/__tests__/**',
-        '**/*.stories.tsx'
+        '**/*.stories.tsx',
+        '**/*.stories.mdx',
+        '**/*.md'
       ],
       clean: true
     }),
