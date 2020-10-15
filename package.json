@@ -6,7 +6,7 @@
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rm -rf compiled build; tsc && rollup -c",
     "build:storybook": "rm -rf storybook-static; build-storybook -s public --docs && git subtree push --prefix storybook-static origin gh-pages",
     "lint": "standard",
     "format": "prettier-standard --format",

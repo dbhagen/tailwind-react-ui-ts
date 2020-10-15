@@ -89,7 +89,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       props.text = brand ? theme.brandColors[brand] : text
       props['bg-hocus'] = `${getColorShade(
         brand ? theme.brandColors[brand] : text,
-        '100',
+        100,
       )}`
       break
     case 'link':

@@ -7,8 +7,9 @@ import { filterProps } from '../utils'
 import tailwindProps, { propTypes } from './tailwindProps'
 import getTailwindClassNames from './getTailwindClassNames'
 
-const withTailwind = (Component, { ignore = [] } = {}) => {
-  const WithTailwind = ({ className, ...props }) => (
+// TODO: Remove Any Types
+const withTailwind = (Component: any, { ignore }: { ignore: any[] } = { ignore: [] }) => {
+  const WithTailwind = ({ className, ...props }: { className: any }) => (
     <Component
       {...filterProps(
         props,

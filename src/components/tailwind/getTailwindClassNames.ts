@@ -1,12 +1,11 @@
-/* eslint-disable react/destructuring-assignment */
 import { paramCase } from 'param-case'
 
 import tailwindPropToClassName from './tailwindPropToClassName'
 import tailwindProps, { propVariants } from './tailwindProps'
 
-const hasUpperCase = str => str.toLowerCase() !== str
+const hasUpperCase = (str: string) => str.toLowerCase() !== str
 
-export default (props, { ignore = [], prefix } = {}) =>
+const getTailwindClassNames = (props: Object, { ignore, prefix }: {ignore?: any, prefix?: string} = {ignore: [], prefix: ''}) =>
   !!props &&
   Object.keys(props).reduce((twClasses, key) => {
     if (
@@ -43,3 +42,5 @@ export default (props, { ignore = [], prefix } = {}) =>
 
     return [...twClasses, tailwindPropToClassName(type, props[key], prefix)]
   }, [])
+
+export default getTailwindClassNames

@@ -5,7 +5,8 @@ import merge from 'lodash.merge'
 import defaultTheme from './defaultTheme'
 import TailwindTheme from './TailwindTheme'
 
-const TailwindThemeProvider = ({ theme, children }) => {
+// TODO: Remove Any Types
+const TailwindThemeProvider = ({ theme, children }: { theme: any, children: any }) => {
   const mergedTheme = merge({}, defaultTheme, theme)
 
   return (

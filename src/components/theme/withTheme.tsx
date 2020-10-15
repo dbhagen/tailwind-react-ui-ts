@@ -2,8 +2,9 @@ import React from 'react'
 
 import TailwindTheme from './TailwindTheme'
 
-const withTheme = Component => {
-  const WithTheme = props => (
+// TODO: Remove Any Types
+const withTheme = (Component: any) => {
+  const WithTheme = (props: any) => (
     <TailwindTheme.Consumer>
       {theme => <Component {...props} theme={theme} />}
     </TailwindTheme.Consumer>
