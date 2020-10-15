@@ -27,6 +27,7 @@ export default {
     typescript({
       rollupCommonJSResolveHack: true,
       exclude: [
+        '**/storybook-static/**',
         '**/__tests__/**',
         '**/*.stories.tsx',
         '**/*.stories.mdx',
