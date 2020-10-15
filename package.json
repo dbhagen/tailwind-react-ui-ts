@@ -7,9 +7,9 @@
   "jsnext:main": "build/index.es.js",
   "scripts": {
     "build": "rm -rf compiled build; tsc && rollup -c",
-    "build:storybook": "rm -rf storybook-static || true && mkdir storybook-static && git subtree pull --prefix storybook-static $PUSH_DOCS_REPO gh-pages && build-storybook -s public --docs && git add -f storybook-static && git subtree push --prefix storybook-static $PUSH_DOCS_REPO gh-pages",
+    "build:storybook": "rm -rf storybook-static || true && mkdir storybook-static && git subtree add --prefix storybook-static $PUSH_DOCS_REPO gh-pages || true && git subtree pull --prefix storybook-static $PUSH_DOCS_REPO gh-pages && build-storybook -s public --docs && git add -f storybook-static && git subtree push --prefix storybook-static $PUSH_DOCS_REPO gh-pages",
     "sbtest": "git add -f storybook-static && git commit -m 'Automatic storybook regeneration' && git push",
-    "testw": "git subtree add --prefix storybook-static $PUSH_DOCS_REPO gh-pages ",
+    "testw": " ",
     "lint": "standard",
     "format": "prettier-standard --format",
     "test": "jest --coverage",
