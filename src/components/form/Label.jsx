@@ -21,7 +21,7 @@ const Label = ({
     htmlFor={!optionList ? inputId || htmlFor : undefined}
     m={{ b: theme.spacing.sm }}
     opacity={disabled ? 50 : undefined}
-    weight="bold"
+    weight='bold'
     {...rest}
   >
     {children}
@@ -34,22 +34,22 @@ Label.propTypes = {
   id: PropTypes.string,
   field: PropTypes.shape({
     inputId: PropTypes.string,
-    disabled: PropTypes.bool,
+    disabled: PropTypes.bool
   }),
   children: PropTypes.node,
   htmlFor: PropTypes.string,
-  optionList: PropTypes.bool,
+  optionList: PropTypes.bool
 }
 
 Label.defaultProps = {
   is: 'label',
   id: undefined,
   field: {
-    disabled: false,
+    disabled: false
   },
   children: undefined,
   htmlFor: undefined,
-  optionList: false,
+  optionList: false
 }
 
 export { Label as component }

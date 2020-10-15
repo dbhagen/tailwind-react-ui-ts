@@ -7,14 +7,14 @@ import { defaultTheme } from '../../theme'
 const setup = (testProps = {}) => {
   const props = Object.assign(
     { theme: defaultTheme, htmlFor: 'input' },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(<Label {...props}>Username</Label>)
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

@@ -9,7 +9,7 @@ import { List } from '../list'
 
 import NavItem from './NavItem'
 
-const NavItemWrapper = props => <li role="none" {...props} />
+const NavItemWrapper = props => <li role='none' {...props} />
 
 const NavMenu = ({
   theme,
@@ -22,46 +22,46 @@ const NavMenu = ({
 }) => {
   const transitionStyles = {
     entering: { maxHeight: '0', position: 'absolute' },
-    entered: { maxHeight: '100vh' },
+    entered: { maxHeight: '100vh' }
   }
   const headingId = `${header.id}-menu`
 
   const responsive = {
     nav: header.screen
       ? {
-          [`w-${header.screen}`]: 'auto',
-          [`flex-${header.screen}`]: true,
-        }
+        [`w-${header.screen}`]: 'auto',
+        [`flex-${header.screen}`]: true
+      }
       : {},
     menu: header.screen
       ? {
-          [`flex-${header.screen}`]: true,
-          [`m-${header.screen}`]: { b: 0 },
-        }
-      : {},
+        [`flex-${header.screen}`]: true,
+        [`m-${header.screen}`]: { b: 0 }
+      }
+      : {}
   }
 
   return (
     <Box
       is={is}
-      overflow="hidden"
-      w="full"
-      flex="grow"
-      items="center"
+      overflow='hidden'
+      w='full'
+      flex='grow'
+      items='center'
       h={!header.collapsable ? 12 : undefined}
       style={
         header.collapsable
           ? {
-              transition: 'max-height 500ms',
-              maxHeight: '0',
-              ...transitionStyles[transition],
-            }
+            transition: 'max-height 500ms',
+            maxHeight: '0',
+            ...transitionStyles[transition]
+          }
           : undefined
       }
       id={`${header.id}-nav`}
       aria-labelledby={headingId}
       aria-expanded={header.collapsable ? header.open : undefined}
-      role="navigation"
+      role='navigation'
       {...responsive.nav}
       {...rest}
     >
@@ -70,8 +70,8 @@ const NavMenu = ({
       </Title>
       <List
         reset
-        flex="grow"
-        role="menu"
+        flex='grow'
+        role='menu'
         listItemIs={NavItemWrapper}
         {...responsive.menu}
         {...list}
@@ -80,7 +80,7 @@ const NavMenu = ({
           children,
           child =>
             child.type === NavItem &&
-            React.cloneElement(child, { header, role: 'menuitem' }),
+            React.cloneElement(child, { header, role: 'menuitem' })
         )}
       </List>
       {React.Children.map(children, child => child.type !== NavItem && child)}
@@ -96,9 +96,9 @@ NavMenu.propTypes = {
   header: PropTypes.shape({
     open: PropTypes.bool,
     collapsable: PropTypes.bool,
-    screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
   }),
-  list: PropTypes.shape({}),
+  list: PropTypes.shape({})
 }
 
 NavMenu.defaultProps = {
@@ -107,10 +107,10 @@ NavMenu.defaultProps = {
   header: {
     open: false,
     collapsable: false,
-    screen: 'lg',
+    screen: 'lg'
   },
   transition: 'entering',
-  list: {},
+  list: {}
 }
 
 export { NavMenu as component }

@@ -43,7 +43,7 @@ Flex.propTypes = {
   col: PropTypes.bool,
   reverse: PropTypes.bool,
   wrap: PropTypes.bool,
-  wrapReverse: PropTypes.bool,
+  wrapReverse: PropTypes.bool
 }
 
 Flex.defaultProps = {
@@ -54,7 +54,7 @@ Flex.defaultProps = {
   col: false,
   reverse: false,
   wrap: false,
-  wrapReverse: false,
+  wrapReverse: false
 }
 
 export default Flex

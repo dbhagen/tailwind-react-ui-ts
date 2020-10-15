@@ -8,16 +8,16 @@ const setup = (testProps = {}) => {
   const props = Object.assign(
     {
       theme: defaultTheme,
-      header: { style: { bg: 'blue-400', text: 'white' } },
+      header: { style: { bg: 'blue-400', text: 'white' } }
     },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(<NavItem {...props}>Link</NavItem>)
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

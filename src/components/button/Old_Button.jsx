@@ -26,7 +26,7 @@ export const Button = ({
     border: [true, 'transparent'],
     leading: 'tight',
     p: { x: theme.spacing.md, y: theme.spacing.sm },
-    rounded: theme.radius,
+    rounded: theme.radius
   }
 
   if (large) {
@@ -41,7 +41,7 @@ export const Button = ({
       props.text = brand ? theme.textColors.on[brand] : text
       props['bg-hocus'] = getColorShade(
         brand ? theme.brandColors[brand] : bg,
-        theme.highlightOffset,
+        theme.highlightOffset
       )
       break
     case 'outline':
@@ -55,7 +55,7 @@ export const Button = ({
       props.text = brand ? theme.brandColors[brand] : text
       props['bg-hocus'] = `${getColorShade(
         brand ? theme.brandColors[brand] : text,
-        '100',
+        '100'
       )}`
       break
     case 'link':
@@ -66,7 +66,7 @@ export const Button = ({
       props.text = brand ? theme.brandColors[brand] : text
       props['text-hocus'] = getColorShade(
         brand ? theme.brandColors[brand] : text,
-        theme.highlightOffset,
+        theme.highlightOffset
       )
       break
     default:
@@ -108,7 +108,7 @@ Button.propTypes = {
   brand: PropTypes.string,
   bg: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  border: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  border: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
 }
 
 Button.defaultProps = {
@@ -124,7 +124,7 @@ Button.defaultProps = {
   brand: undefined,
   bg: undefined,
   text: undefined,
-  border: undefined,
+  border: undefined
 }
 
 export { Button as component }

@@ -14,12 +14,12 @@ const setup = (testProps = {}) => {
       <Header>Header</Header>
       <p>Body</p>
       <Footer>Footer</Footer>
-    </SiteWrap>,
+    </SiteWrap>
   )
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

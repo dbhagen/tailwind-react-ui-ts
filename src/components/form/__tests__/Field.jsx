@@ -12,7 +12,7 @@ import ErrorText from '../ErrorText'
 const setup = (testProps = {}) => {
   const props = Object.assign(
     { theme: defaultTheme, hasError: true, hasHelp: true },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(
@@ -22,14 +22,14 @@ const setup = (testProps = {}) => {
         Your password must be 8-20 characters long, contain letters and numbers,
         and must not contain spaces, special characters, or emoji.
       </HelpText>
-      <TextInput name="password" type="password" />
+      <TextInput name='password' type='password' />
       <ErrorText>Please complete</ErrorText>
-    </Field>,
+    </Field>
   )
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

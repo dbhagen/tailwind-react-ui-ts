@@ -6,11 +6,11 @@ import ContentBlock from './ContentBlock'
 const Section = ({ is, ...rest }) => <ContentBlock is={is} {...rest} />
 
 Section.propTypes = {
-  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
+  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object])
 }
 
 Section.defaultProps = {
-  is: 'section',
+  is: 'section'
 }
 
 export default Section

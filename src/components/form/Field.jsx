@@ -6,7 +6,7 @@ import { Box } from '../primitives'
 import { getUniqueID, filterProps } from '../utils'
 
 class Field extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     const { id } = props
 
     super(props)
@@ -14,7 +14,7 @@ class Field extends PureComponent {
     this.id = id || getUniqueID('field')
   }
 
-  render() {
+  render () {
     const {
       theme,
       is,
@@ -33,7 +33,7 @@ class Field extends PureComponent {
       errorId: hasError ? `${this.id}-error` : undefined,
       labelId: optionList ? `${this.id}-label` : undefined,
       invalid: hasError,
-      disabled,
+      disabled
     }
 
     return (
@@ -41,11 +41,11 @@ class Field extends PureComponent {
         is={is}
         id={this.id}
         m={{ b: theme.spacing.md }}
-        maxW="sm"
+        maxW='sm'
         {...filterProps(rest, ['id'])}
       >
         {React.Children.map(children, child =>
-          React.cloneElement(child, { field: fieldProps }),
+          React.cloneElement(child, { field: fieldProps })
         )}
       </Box>
     )
@@ -61,7 +61,7 @@ Field.propTypes = {
   hasError: PropTypes.bool,
   disabled: PropTypes.bool,
   id: PropTypes.string,
-  optionList: PropTypes.bool,
+  optionList: PropTypes.bool
 }
 
 Field.defaultProps = {
@@ -72,7 +72,7 @@ Field.defaultProps = {
   hasError: false,
   disabled: false,
   id: undefined,
-  optionList: false,
+  optionList: false
 }
 
 export { Field as component }

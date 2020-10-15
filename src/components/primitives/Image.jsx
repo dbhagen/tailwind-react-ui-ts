@@ -9,9 +9,9 @@ import { propTypes } from '../tailwind'
 const Image = ({ is, children, aspectRatio, bg, w, text, ...rest }) => (
   <Box relative w={w} text={text}>
     <Box bg={bg} style={{ paddingBottom: `${100 / aspectRatio}%` }} />
-    <Base is={is} absolute inset={0} w="full" {...rest} />
+    <Base is={is} absolute inset={0} w='full' {...rest} />
     {children && (
-      <Box absolute inset={0} flex items="end">
+      <Box absolute inset={0} flex items='end'>
         {children}
       </Box>
     )}
@@ -24,7 +24,7 @@ Image.propTypes = {
   aspectRatio: PropTypes.number,
   bg: propTypes.bg,
   w: propTypes.w,
-  text: propTypes.text,
+  text: propTypes.text
 }
 
 Image.defaultProps = {
@@ -33,7 +33,7 @@ Image.defaultProps = {
   children: undefined,
   bg: 'gray-light',
   w: 'full',
-  text: undefined,
+  text: undefined
 }
 
 export default Image

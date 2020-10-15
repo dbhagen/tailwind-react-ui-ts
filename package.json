@@ -65,7 +65,10 @@
   "standard": {
     "ignore": [
       "node_modules/",
-      "build/"
+      "build/",
+      "compile/",
+      "storybook-static",
+      "holding"
     ],
     "globals": [
       "describe",
@@ -90,6 +93,7 @@
     "lodash.uniqueid": "^4.0.1",
     "param-case": "^3.0.3",
     "react-transition-group": "^4.4.1",
+    "tailwindcss": "^1.9.2",
     "utility-types": "^3.10.0"
   }
 }

@@ -22,7 +22,7 @@ const Title = ({
   if (!subtitle && element !== 'string' && !/h[1-6]/i.test(element)) {
     ariaProps = {
       role: 'heading',
-      'aria-level': hLevel,
+      'aria-level': hLevel
     }
   }
 
@@ -30,14 +30,14 @@ const Title = ({
     <Text
       is={element}
       {...ariaProps}
-      leading="tight"
+      leading='tight'
       font={[
         theme.text.family[subtitle ? 'subtitle' : 'title'],
-        subtitle ? 'medium' : 'bold',
+        subtitle ? 'medium' : 'bold'
       ]}
       text={[
         theme.text.size.title[size - 1],
-        subtitle ? theme.textColors.body : theme.textColors.emphasis,
+        subtitle ? theme.textColors.body : theme.textColors.emphasis
       ]}
       m={!flush ? { b: theme.spacing.md } : undefined}
       {...rest}
@@ -54,7 +54,7 @@ Title.propTypes = {
   size: PropTypes.number,
   subtitle: PropTypes.bool,
   flush: PropTypes.bool,
-  level: PropTypes.number,
+  level: PropTypes.number
 }
 
 Title.defaultProps = {
@@ -63,7 +63,7 @@ Title.defaultProps = {
   size: 4,
   subtitle: false,
   flush: false,
-  level: undefined,
+  level: undefined
 }
 
 export { Title as component }

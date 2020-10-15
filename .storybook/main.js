@@ -1,8 +1,3 @@
-// import { addDecorator } from '@storybook/react'
-// import { withA11y } from '@storybook/addon-a11y'
-
-// addDecorator(withA11y)
-
 module.exports = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
@@ -15,6 +10,11 @@ module.exports = {
       }
     },
     '@storybook/addon-viewport',
-    '@storybook/addon-a11y'
+    {
+      name: '@storybook/addon-a11y',
+      options: {
+
+      }
+    }
   ]
 }

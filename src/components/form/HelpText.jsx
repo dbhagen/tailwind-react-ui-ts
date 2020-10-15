@@ -14,15 +14,15 @@ const HelpText = ({ is, field: { helpId }, ...rest }) => (
 HelpText.propTypes = {
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   field: PropTypes.shape({
-    helpId: PropTypes.string,
+    helpId: PropTypes.string
   }),
-  size: PropTypes.number,
+  size: PropTypes.number
 }
 
 HelpText.defaultProps = {
   is: InfoText,
   field: {},
-  size: 1,
+  size: 1
 }
 
 export default HelpText

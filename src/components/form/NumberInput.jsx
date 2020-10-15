@@ -22,17 +22,17 @@ const NumberInput = ({
   return (
     <Touchable
       is={is}
-      inputMode="numeric"
-      pattern="[0-9]*"
-      appearance="none"
-      bg="white"
+      inputMode='numeric'
+      pattern='[0-9]*'
+      appearance='none'
+      bg='white'
       rounded={theme.radius}
       text={theme.textColors.body}
       p={{ x: theme.spacing.md, y: theme.spacing.sm }}
       m={{ b: theme.spacing.sm }}
       border={!isInvalid ? true : [true, theme.brandColors.danger]}
-      w="full"
-      leading="tight"
+      w='full'
+      leading='tight'
       id={field.inputId || id || name}
       name={name}
       disabled={field.disabled || disabled}
@@ -50,14 +50,14 @@ NumberInput.propTypes = {
   field: PropTypes.shape({
     inputId: PropTypes.string,
     invalid: PropTypes.bool,
-    disabled: PropTypes.bool,
+    disabled: PropTypes.bool
   }),
   children: PropTypes.node,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
-  invalid: PropTypes.bool,
+  invalid: PropTypes.bool
 }
 
 NumberInput.defaultProps = {
@@ -67,7 +67,7 @@ NumberInput.defaultProps = {
   id: undefined,
   disabled: false,
   readOnly: false,
-  invalid: false,
+  invalid: false
 }
 
 export { NumberInput as component }

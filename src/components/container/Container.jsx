@@ -21,14 +21,14 @@ Container.propTypes = {
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   children: PropTypes.node,
   leftAlign: PropTypes.bool,
-  padding: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  padding: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 }
 
 Container.defaultProps = {
   is: 'div',
   children: undefined,
   leftAlign: false,
-  padding: false,
+  padding: false
 }
 
 export { Container as component }

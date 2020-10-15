@@ -12,12 +12,12 @@ const setup = (testProps = {}) => {
       <span>One</span>
       <span>Two</span>
       <span>Three</span>
-    </List>,
+    </List>
   )
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

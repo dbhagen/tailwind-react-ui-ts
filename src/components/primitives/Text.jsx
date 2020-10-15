@@ -50,7 +50,7 @@ Text.propTypes = {
   weight: PropTypes.string,
   leading: propTypes.leading,
   tight: PropTypes.bool,
-  loose: PropTypes.bool,
+  loose: PropTypes.bool
 }
 
 Text.defaultProps = {
@@ -64,7 +64,7 @@ Text.defaultProps = {
   weight: undefined,
   leading: 'normal',
   tight: false,
-  loose: false,
+  loose: false
 }
 
 export default Text

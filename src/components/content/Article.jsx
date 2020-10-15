@@ -6,11 +6,11 @@ import ContentBlock from './ContentBlock'
 const Article = ({ is, ...rest }) => <ContentBlock is={is} {...rest} />
 
 Article.propTypes = {
-  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
+  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object])
 }
 
 Article.defaultProps = {
-  is: 'article',
+  is: 'article'
 }
 
 export default Article

@@ -23,15 +23,15 @@ const TextInput = ({
   return (
     <Touchable
       is={is}
-      appearance="none"
-      bg="white"
+      appearance='none'
+      bg='white'
       rounded={theme.radius}
       text={theme.textColors.body}
       p={{ x: theme.spacing.md, y: theme.spacing.sm }}
       m={{ b: theme.spacing.sm }}
       border={!isInvalid ? true : [true, theme.brandColors.danger]}
-      w="full"
-      leading="tight"
+      w='full'
+      leading='tight'
       id={field.inputId || id || name}
       name={name}
       type={type}
@@ -50,7 +50,7 @@ TextInput.propTypes = {
   field: PropTypes.shape({
     inputId: PropTypes.string,
     invalid: PropTypes.bool,
-    disabled: PropTypes.bool,
+    disabled: PropTypes.bool
   }),
   children: PropTypes.node,
   id: PropTypes.string,
@@ -58,7 +58,7 @@ TextInput.propTypes = {
   type: PropTypes.string,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
-  invalid: PropTypes.bool,
+  invalid: PropTypes.bool
 }
 
 TextInput.defaultProps = {
@@ -69,7 +69,7 @@ TextInput.defaultProps = {
   type: 'text',
   disabled: false,
   readOnly: false,
-  invalid: false,
+  invalid: false
 }
 
 export { TextInput as component }

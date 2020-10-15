@@ -26,13 +26,13 @@ const Col = ({ is, children, w, ...rest }) => (
 Col.propTypes = {
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   children: PropTypes.node,
-  w: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  w: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
 }
 
 Col.defaultProps = {
   is: 'li',
   children: undefined,
-  w: 'full',
+  w: 'full'
 }
 
 export default Col

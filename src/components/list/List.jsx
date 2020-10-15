@@ -29,8 +29,8 @@ const List = ({
       p={
         listStyle
           ? {
-              l: theme.spacing.md,
-            }
+            l: theme.spacing.md
+          }
           : undefined
       }
       flex={
@@ -50,13 +50,13 @@ const List = ({
               is={listItemIs}
               m={{
                 b: padding && !justified && !fullWidth && theme.spacing.sm,
-                r: inline && theme.spacing.sm,
+                r: inline && theme.spacing.sm
               }}
               flex={fullWidth ? 'grow' : undefined}
             >
               {child}
             </Box>
-          ),
+          )
       )}
     </Box>
   )
@@ -69,7 +69,7 @@ List.propTypes = {
   padding: PropTypes.bool,
   list: PropTypes.oneOfType([
     PropTypes.bool,
-    PropTypes.oneOf(['disc', 'decimal']),
+    PropTypes.oneOf(['disc', 'decimal'])
   ]),
   inline: PropTypes.bool,
   justified: PropTypes.bool,
@@ -78,8 +78,8 @@ List.propTypes = {
   listItemIs: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
-    PropTypes.object,
-  ]),
+    PropTypes.object
+  ])
 }
 
 List.defaultProps = {
@@ -91,7 +91,7 @@ List.defaultProps = {
   justified: false,
   fullWidth: false,
   ordered: false,
-  listItemIs: 'li',
+  listItemIs: 'li'
 }
 
 export { List as component }

@@ -7,14 +7,14 @@ import { defaultTheme } from '../../theme'
 const setup = (testProps = {}) => {
   const props = Object.assign(
     { theme: defaultTheme, name: 'test', value: 'test-1', label: 'Test?' },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(<OptionInput {...props} />)
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

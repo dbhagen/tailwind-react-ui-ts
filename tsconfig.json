@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "outDir": "compiled/lib",
     "declarationDir": "compiled/types",
     "module": "esnext",

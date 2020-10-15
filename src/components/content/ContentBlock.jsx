@@ -8,12 +8,12 @@ import { getUniqueID } from '../utils'
 import ContentTitle from './ContentTitle'
 
 class ContentBlock extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.id = getUniqueID('content')
   }
 
-  render() {
+  render () {
     const { theme, is, children, ...rest } = this.props
 
     return (
@@ -37,12 +37,12 @@ class ContentBlock extends PureComponent {
 ContentBlock.propTypes = {
   theme: PropTypes.shape({}).isRequired,
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 ContentBlock.defaultProps = {
   is: 'section',
-  children: undefined,
+  children: undefined
 }
 
 export { ContentBlock as component }

@@ -22,8 +22,8 @@ const SiteWrap = ({ is, theme, children, ...rest }) => {
     <Flex
       is={is}
       col
-      minH="screen"
-      leading="normal"
+      minH='screen'
+      leading='normal'
       font={theme.text.family.body}
       text={[theme.text.size.body[1], theme.textColors.body]}
       {...rest}
@@ -44,12 +44,12 @@ const SiteWrap = ({ is, theme, children, ...rest }) => {
 SiteWrap.propTypes = {
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   theme: PropTypes.shape({}).isRequired,
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 SiteWrap.defaultProps = {
   is: 'div',
-  children: undefined,
+  children: undefined
 }
 
 export { SiteWrap as component }

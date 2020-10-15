@@ -5,17 +5,17 @@ import { List } from '../list'
 import { withTheme } from '../theme'
 
 class OptionList extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
-      checked: [],
+      checked: []
     }
 
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(e) {
+  handleChange (e) {
     const { checkbox } = this.props
     const { checked } = this.state
     const { value } = e.target
@@ -24,16 +24,16 @@ class OptionList extends PureComponent {
       return this.setState({
         checked: checked.includes(value)
           ? checked.filter(checkedVal => checkedVal !== value)
-          : [...checked, value],
+          : [...checked, value]
       })
     }
 
     return this.setState({
-      checked: [e.target.value],
+      checked: [e.target.value]
     })
   }
 
-  render() {
+  render () {
     const {
       theme,
       children,
@@ -45,7 +45,7 @@ class OptionList extends PureComponent {
     } = this.props
     const { checked } = this.state
     const describedBy = [field.labelId, field.errorId, field.helpId].filter(
-      by => by,
+      by => by
     )
     const isInvalid = field.invalid || invalid
 
@@ -62,7 +62,7 @@ class OptionList extends PureComponent {
             'aria-invalid': isInvalid || undefined,
             'aria-describedby': describedBy.length
               ? describedBy.join(' ')
-              : undefined,
+              : undefined
           })
         })}
       </List>
@@ -77,17 +77,17 @@ OptionList.propTypes = {
   field: PropTypes.shape({
     inputId: PropTypes.string,
     invalid: PropTypes.bool,
-    disabled: PropTypes.bool,
+    disabled: PropTypes.bool
   }),
   checkbox: PropTypes.bool,
-  invalid: PropTypes.bool,
+  invalid: PropTypes.bool
 }
 
 OptionList.defaultProps = {
   children: undefined,
   checkbox: false,
   field: {},
-  invalid: false,
+  invalid: false
 }
 
 export { OptionList as component }

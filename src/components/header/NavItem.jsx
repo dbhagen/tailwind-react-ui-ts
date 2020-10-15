@@ -17,8 +17,8 @@ const NavItem = ({
 
   const responsive = screen
     ? {
-        [`m-${screen}`]: { t: 0, r: theme.spacing.sm },
-      }
+      [`m-${screen}`]: { t: 0, r: theme.spacing.sm }
+    }
     : {}
 
   return (
@@ -48,16 +48,16 @@ NavItem.propTypes = {
   children: PropTypes.node,
   header: PropTypes.shape({
     style: PropTypes.object,
-    screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
   }),
-  active: PropTypes.bool,
+  active: PropTypes.bool
 }
 
 NavItem.defaultProps = {
   is: 'a',
   children: undefined,
   header: { style: {}, screen: 'lg' },
-  active: false,
+  active: false
 }
 
 export { NavItem as component }

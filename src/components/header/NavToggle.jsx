@@ -6,7 +6,7 @@ import { Button } from '../button'
 import { withTheme } from '../theme'
 
 const Bar = () => (
-  <Box inlineBlock border="b" style={{ borderColor: 'currentColor' }} />
+  <Box inlineBlock border='b' style={{ borderColor: 'currentColor' }} />
 )
 
 const NavToggle = ({
@@ -23,8 +23,8 @@ const NavToggle = ({
 
   const responsive = screen
     ? {
-        [`hidden-${screen}`]: true,
-      }
+      [`hidden-${screen}`]: true
+    }
     : {}
 
   return (
@@ -34,8 +34,8 @@ const NavToggle = ({
       p={0}
       block
       onClick={handleClick}
-      aria-label="Open menu"
-      aria-haspopup="true"
+      aria-label='Open menu'
+      aria-haspopup='true'
       aria-controls={`${id}-nav`}
       text={style.text || theme.textColors.on.primary}
       bg-hocus={style.text || theme.textColors.on.primary}
@@ -46,9 +46,9 @@ const NavToggle = ({
       {children || (
         <Box
           flex={[true, 'col']}
-          items="stretch"
-          justify="around"
-          h="full"
+          items='stretch'
+          justify='around'
+          h='full'
           p={3}
         >
           <Bar />
@@ -66,9 +66,9 @@ NavToggle.propTypes = {
   header: PropTypes.shape({
     onToggle: PropTypes.func.isRequired,
     screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    style: PropTypes.object,
+    style: PropTypes.object
   }),
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 }
 
 NavToggle.defaultProps = {
@@ -76,8 +76,8 @@ NavToggle.defaultProps = {
   onClick: undefined,
   header: {
     style: {},
-    screen: 'lg',
-  },
+    screen: 'lg'
+  }
 }
 
 export { NavToggle as component }

@@ -9,6 +9,7 @@ const getTailwindClassNames = (props: Object, { ignore, prefix }: {ignore?: any,
   !!props &&
   Object.keys(props).reduce((twClasses, key) => {
     if (
+      ignore !== undefined &&
       ignore.includes(key) ||
       props[key] === false ||
       typeof props[key] === 'undefined'

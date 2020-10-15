@@ -11,15 +11,15 @@ const setup = (testProps = {}) => {
 
   const wrapper = shallow(
     <OptionList {...props}>
-      <Radio value="yes" label="Yes" />
-      <Radio value="no" label="No" />
-      <Radio value="maybe" label="Maybe" />
-    </OptionList>,
+      <Radio value='yes' label='Yes' />
+      <Radio value='no' label='No' />
+      <Radio value='maybe' label='Maybe' />
+    </OptionList>
   )
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

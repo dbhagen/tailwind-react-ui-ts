@@ -8,12 +8,12 @@ const setup = (testProps = {}) => {
   const props = Object.assign({ theme: defaultTheme }, testProps)
 
   const wrapper = shallow(
-    <ContentBlock {...props}>Lorem ipsum...</ContentBlock>,
+    <ContentBlock {...props}>Lorem ipsum...</ContentBlock>
   )
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

@@ -7,11 +7,11 @@ import { FillButton } from '../button'
 const SkipLink = ({ children, href, ...rest }) => (
   <Box visuallyHiddenFocusable>
     <FillButton
-      is="a"
-      bg="white"
-      text="black"
+      is='a'
+      bg='white'
+      text='black'
       absolute
-      rounded="none"
+      rounded='none'
       href={href}
       {...rest}
     >
@@ -22,12 +22,12 @@ const SkipLink = ({ children, href, ...rest }) => (
 
 SkipLink.propTypes = {
   children: PropTypes.node,
-  href: PropTypes.string,
+  href: PropTypes.string
 }
 
 SkipLink.defaultProps = {
   children: undefined,
-  href: '#main',
+  href: '#main'
 }
 
 export default SkipLink

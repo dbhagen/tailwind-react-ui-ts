@@ -7,13 +7,13 @@ import { withTheme } from '../theme'
 import Label from './Label'
 
 class OptionInput extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     const { defaultChecked, checked } = props
 
     this.state = {
-      checked: defaultChecked || !!checked,
+      checked: defaultChecked || !!checked
     }
 
     this.inputRef = null
@@ -22,16 +22,16 @@ class OptionInput extends PureComponent {
     this.handleUpdate = this.handleUpdate.bind(this)
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate (prevProps) {
     this.handleUpdate(prevProps)
   }
 
-  handleChange(e) {
+  handleChange (e) {
     const { checkbox, onChange, checked } = this.props
 
     if (checked === undefined) {
       this.setState(({ checked: checkedState }) => ({
-        checked: checkbox ? !checkedState : true,
+        checked: checkbox ? !checkedState : true
       }))
     }
 
@@ -40,7 +40,7 @@ class OptionInput extends PureComponent {
     e.preventDefault()
   }
 
-  handleUpdate() {
+  handleUpdate () {
     const { checked } = this.props
     const { checked: checkedState } = this.state
 
@@ -49,7 +49,7 @@ class OptionInput extends PureComponent {
     }
   }
 
-  render() {
+  render () {
     const {
       theme,
       name,
@@ -68,31 +68,31 @@ class OptionInput extends PureComponent {
       <Touchable
         is={Label}
         flex
-        items="center"
+        items='center'
         onTouch={this.handleChange}
         {...rest}
       >
         <Box
-          is="input"
+          is='input'
           id={id}
           visuallyHidden
           name={name}
           type={checkbox ? 'checkbox' : 'radio'}
           value={value}
           checked={checked}
-          tabIndex="-1"
+          tabIndex='-1'
           innerRef={this.inputRef}
           onChange={() => {}}
         />
         <Flex
-          items="center"
-          justify="center"
+          items='center'
+          justify='center'
           inlineBlock
           rounded={checkbox ? theme.radius : 'full'}
           h={4}
           w={4}
           border={[true, checked ? theme.brandColors.primary : false].filter(
-            prop => !!prop,
+            prop => !!prop
           )}
           bg={checkbox && checked ? theme.brandColors.primary : undefined}
           m={{ r: theme.spacing.sm }}
@@ -100,21 +100,21 @@ class OptionInput extends PureComponent {
           {checked &&
             (checkbox ? (
               <Box
-                is="svg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
+                is='svg'
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 24 24'
                 h={3}
                 w={3}
-                text="white"
-                fill="current"
+                text='white'
+                fill='current'
               >
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                <path d='M0 0h24v24H0z' fill='none' />
+                <path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z' />
               </Box>
             ) : (
               <Box
                 inlineBlock
-                rounded="full"
+                rounded='full'
                 h={2}
                 w={2}
                 bg={theme.brandColors.primary}
@@ -124,8 +124,8 @@ class OptionInput extends PureComponent {
         <Box
           inlineBlock
           visuallyHidden={hideLabel}
-          leading="tight"
-          font="normal"
+          leading='tight'
+          font='normal'
         >
           {label}
         </Box>
@@ -144,7 +144,7 @@ OptionInput.propTypes = {
   checked: PropTypes.bool,
   onChange: PropTypes.func,
   checkbox: PropTypes.bool,
-  id: PropTypes.string,
+  id: PropTypes.string
 }
 
 OptionInput.defaultProps = {
@@ -153,7 +153,7 @@ OptionInput.defaultProps = {
   checked: undefined,
   onChange: undefined,
   checkbox: false,
-  id: undefined,
+  id: undefined
 }
 
 export { OptionInput as component }

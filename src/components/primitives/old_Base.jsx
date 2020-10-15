@@ -25,11 +25,11 @@ const Base = ({
           {
             ...rest,
             'outine-focus': 'none',
-            'shadow-focus': 'outline',
+            'shadow-focus': 'outline'
           },
-          { prefix: theme.prefix },
+          { prefix: theme.prefix }
         ),
-        className,
+        className
       )}
       ref={innerRef}
     >
@@ -44,14 +44,14 @@ Base.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
-  ...propTypes,
+  ...propTypes
 }
 
 Base.defaultProps = {
   is: 'div',
   children: undefined,
   className: undefined,
-  innerRef: undefined,
+  innerRef: undefined
 }
 
 export { Base as component }

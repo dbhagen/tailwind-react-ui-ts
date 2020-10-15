@@ -9,12 +9,12 @@ import Paragraph from './Paragraph'
 const BrandText = ({ theme, textOnly, type, ...rest }) => {
   const alertProps = !textOnly
     ? {
-        bg: getColorShade(theme.brandColors[type], '100'),
-        border: [`l-${theme.accentSize}`, theme.brandColors[type]],
-        p: { x: theme.spacing.md, y: theme.spacing.sm },
-        text: theme.textColors.body,
-        rounded: 'r',
-      }
+      bg: getColorShade(theme.brandColors[type], '100'),
+      border: [`l-${theme.accentSize}`, theme.brandColors[type]],
+      p: { x: theme.spacing.md, y: theme.spacing.sm },
+      text: theme.textColors.body,
+      rounded: 'r'
+    }
     : {}
 
   return (
@@ -33,12 +33,12 @@ BrandText.propTypes = {
   theme: PropTypes.shape({}).isRequired,
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   textOnly: PropTypes.bool,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
 }
 
 BrandText.defaultProps = {
   is: 'p',
-  textOnly: false,
+  textOnly: false
 }
 
 export default withTheme(BrandText)

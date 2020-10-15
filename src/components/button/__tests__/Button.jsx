@@ -12,7 +12,7 @@ const setup = (testProps = {}) => {
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 
@@ -21,7 +21,7 @@ describe('Button', () => {
     const { wrapper } = setup({
       buttonStyle: 'fill',
       bg: 'blue-400',
-      text: 'white',
+      text: 'white'
     })
 
     expect(wrapper).toMatchSnapshot()

@@ -17,14 +17,14 @@ Box.propTypes = {
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   children: PropTypes.node,
   inline: PropTypes.bool,
-  inlineBlock: PropTypes.bool,
+  inlineBlock: PropTypes.bool
 }
 
 Box.defaultProps = {
   is: 'div',
   children: undefined,
   inline: false,
-  inlineBlock: false,
+  inlineBlock: false
 }
 
 export default Box

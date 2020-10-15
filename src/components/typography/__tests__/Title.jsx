@@ -11,7 +11,7 @@ const setup = (testProps = {}) => {
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

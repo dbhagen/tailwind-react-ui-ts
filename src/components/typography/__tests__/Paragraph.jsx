@@ -8,12 +8,12 @@ const setup = (testProps = {}) => {
   const props = Object.assign({ theme: defaultTheme }, testProps)
 
   const wrapper = shallow(
-    <Paragraph {...props}>Lorem ipsum dolor sit amet</Paragraph>,
+    <Paragraph {...props}>Lorem ipsum dolor sit amet</Paragraph>
   )
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

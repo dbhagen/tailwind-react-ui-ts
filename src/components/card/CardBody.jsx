@@ -13,12 +13,12 @@ const CardBody = ({ theme, is, children, ...rest }) => (
 CardBody.propTypes = {
   theme: PropTypes.shape({}).isRequired,
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 CardBody.defaultProps = {
   is: 'div',
-  children: undefined,
+  children: undefined
 }
 
 export { CardBody as component }

@@ -7,14 +7,14 @@ import { defaultTheme } from '../../theme'
 const setup = (testProps = {}) => {
   const props = Object.assign(
     { theme: defaultTheme, header: { style: { text: 'white' } } },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(<NavBrand {...props}>Tailwind React UI</NavBrand>)
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

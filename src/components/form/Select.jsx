@@ -7,14 +7,14 @@ import { Box, Touchable } from '../primitives'
 // https://material.io/tools/icons/?style=baseline
 const ExpandMore = props => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
+    xmlns='http://www.w3.org/2000/svg'
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
     {...props}
   >
-    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
-    <path d="M0 0h24v24H0z" fill="none" />
+    <path d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z' />
+    <path d='M0 0h24v24H0z' fill='none' />
   </svg>
 )
 
@@ -41,14 +41,14 @@ const Select = ({
     <Box relative m={{ b: theme.spacing.sm }}>
       <Touchable
         is={is}
-        appearance="none"
-        bg="white"
+        appearance='none'
+        bg='white'
         rounded={theme.radius}
         text={theme.textColors.body}
         p={{ l: theme.spacing.md, r: theme.spacing.lg, y: theme.spacing.sm }}
         border={!isInvalid ? true : [true, theme.brandColors.danger]}
-        w="full"
-        leading="tight"
+        w='full'
+        leading='tight'
         id={field.inputId || id || name}
         name={name}
         type={type}
@@ -60,7 +60,7 @@ const Select = ({
         }
         {...rest}
       >
-        {!!placeholder && <option value="">{placeholder}</option>}
+        {!!placeholder && <option value=''>{placeholder}</option>}
         {options.map(option => (
           <option key={`${name}-${option.value}`} value={option.value}>
             {option.label}
@@ -69,12 +69,12 @@ const Select = ({
       </Touchable>
       <Box
         absolute
-        inset="y-0"
+        inset='y-0'
         right={0}
         flex
-        items="center"
+        items='center'
         p={{ x: theme.spacing.sm }}
-        pointerEvents="none"
+        pointerEvents='none'
       >
         <Box is={icon} h={6} w={6} />
       </Box>
@@ -88,7 +88,7 @@ Select.propTypes = {
   field: PropTypes.shape({
     inputId: PropTypes.string,
     invalid: PropTypes.bool,
-    disabled: PropTypes.bool,
+    disabled: PropTypes.bool
   }),
   children: PropTypes.node,
   id: PropTypes.string,
@@ -101,14 +101,14 @@ Select.propTypes = {
   icon: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
-    PropTypes.object,
+    PropTypes.object
   ]),
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
-      value: PropTypes.string,
-    }),
-  ),
+      value: PropTypes.string
+    })
+  )
 }
 
 Select.defaultProps = {
@@ -122,7 +122,7 @@ Select.defaultProps = {
   invalid: false,
   placeholder: 'Please select',
   icon: ExpandMore,
-  options: [],
+  options: []
 }
 
 export { Select as component }

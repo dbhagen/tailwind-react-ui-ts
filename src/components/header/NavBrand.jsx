@@ -13,15 +13,15 @@ const NavBrand = ({
 }) => {
   const responsive = screen
     ? {
-        [`m-${screen}`]: { r: theme.spacing.lg },
-      }
+      [`m-${screen}`]: { r: theme.spacing.lg }
+    }
     : {}
 
   const aria = !(typeof is === 'string' && is.startsWith('h'))
     ? {
-        role: 'heading',
-        'aria-level': 1,
-      }
+      role: 'heading',
+      'aria-level': 1
+    }
     : {}
 
   return (
@@ -29,7 +29,7 @@ const NavBrand = ({
       is={is}
       inlineBlock
       flex={[true, 'no-shrink']}
-      items="center"
+      items='center'
       h={12}
       text={style.text || theme.textColors.on.primary}
       {...responsive}
@@ -47,14 +47,14 @@ NavBrand.propTypes = {
   children: PropTypes.node,
   header: PropTypes.shape({
     style: PropTypes.object,
-    screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  }),
+    screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  })
 }
 
 NavBrand.defaultProps = {
   is: 'div',
   children: undefined,
-  header: { style: {}, screen: 'lg' },
+  header: { style: {}, screen: 'lg' }
 }
 
 export { NavBrand as component }

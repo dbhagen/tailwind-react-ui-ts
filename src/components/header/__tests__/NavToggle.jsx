@@ -8,16 +8,16 @@ const setup = (testProps = {}) => {
   const props = Object.assign(
     {
       header: { onToggle: jest.fn(), style: { text: 'white' } },
-      theme: defaultTheme,
+      theme: defaultTheme
     },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(<NavToggle {...props} />)
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

@@ -6,13 +6,13 @@ import Base from './Base'
 const focusableElements = ['input', 'select', 'textarea', 'button', 'a']
 
 class Touchable extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
-  handleKeyPress(e) {
+  handleKeyPress (e) {
     const { onTouch } = this.props
     if (
       onTouch &&
@@ -25,15 +25,15 @@ class Touchable extends PureComponent {
     }
   }
 
-  render() {
+  render () {
     const { is, children, tabIndex, disabled, onTouch, ...rest } = this.props
     const isSemantic = focusableElements.includes(is)
 
     return (
       <Base
         is={is}
-        select="none"
-        cursor="pointer"
+        select='none'
+        cursor='pointer'
         pointerEvents={disabled ? 'none' : undefined}
         focusable
         role={!isSemantic ? 'button' : undefined}
@@ -56,7 +56,7 @@ Touchable.propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
   tabIndex: PropTypes.number,
-  onTouch: PropTypes.func,
+  onTouch: PropTypes.func
 }
 
 Touchable.defaultProps = {
@@ -64,7 +64,7 @@ Touchable.defaultProps = {
   children: undefined,
   disabled: false,
   tabIndex: undefined,
-  onTouch: undefined,
+  onTouch: undefined
 }
 
 export default Touchable

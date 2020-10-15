@@ -22,11 +22,11 @@ const Row = ({ is, children, nowrap, gutter, theme, ...rest }) => {
     >
       {gutter
         ? React.Children.map(children, child =>
-            React.cloneElement(child, {
-              p: { l: gutterSpacing },
-              m: { b: gutterSpacing },
-            }),
-          )
+          React.cloneElement(child, {
+            p: { l: gutterSpacing },
+            m: { b: gutterSpacing }
+          })
+        )
         : children}
     </Flex>
   )
@@ -37,14 +37,14 @@ Row.propTypes = {
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   children: PropTypes.node,
   nowrap: PropTypes.bool,
-  gutter: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  gutter: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 }
 
 Row.defaultProps = {
   is: 'ul',
   children: undefined,
   nowrap: false,
-  gutter: false,
+  gutter: false
 }
 
 export { Row as component }

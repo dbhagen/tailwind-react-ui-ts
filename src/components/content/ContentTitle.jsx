@@ -9,14 +9,14 @@ const ContentTitle = ({ content: { id }, visuallyHidden, ...rest }) => (
 
 ContentTitle.propTypes = {
   content: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.string
   }),
-  visuallyHidden: PropTypes.bool,
+  visuallyHidden: PropTypes.bool
 }
 
 ContentTitle.defaultProps = {
   content: {},
-  visuallyHidden: false,
+  visuallyHidden: false
 }
 
 export default ContentTitle

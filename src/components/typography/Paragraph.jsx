@@ -22,7 +22,7 @@ const Paragraph = ({
     text={[
       (size || lead) &&
         theme.text.size.body[(lead ? theme.text.size.body.length : size) - 1],
-      ...getAsArray(text),
+      ...getAsArray(text)
     ]}
     m={{ b: theme.spacing.md }}
     {...rest}
@@ -39,7 +39,7 @@ Paragraph.propTypes = {
   lead: PropTypes.bool,
   brand: PropTypes.bool,
   paragraph: PropTypes.bool,
-  text: propTypes.text,
+  text: propTypes.text
 }
 
 Paragraph.defaultProps = {
@@ -49,7 +49,7 @@ Paragraph.defaultProps = {
   paragraph: false,
   lead: false,
   brand: false,
-  text: undefined,
+  text: undefined
 }
 
 export { Paragraph as component }

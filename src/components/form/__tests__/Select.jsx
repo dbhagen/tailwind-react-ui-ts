@@ -11,17 +11,17 @@ const setup = (testProps = {}) => {
       name: 'username',
       options: [
         { value: 'one', label: 'single' },
-        { value: 'two', label: 'double' },
-      ],
+        { value: 'two', label: 'double' }
+      ]
     },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(<TextInput {...props} />)
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

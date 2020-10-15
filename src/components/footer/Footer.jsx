@@ -8,7 +8,7 @@ import { Container } from '../container'
 const Footer = ({ theme, is, children, ...rest }) => (
   <Box
     is={is}
-    role="contentinfo"
+    role='contentinfo'
     p={{ t: theme.spacing.lg, b: theme.spacing.xl }}
     bg={theme.brandColors.secondary}
     text={theme.textColors.on.secondary}
@@ -21,12 +21,12 @@ const Footer = ({ theme, is, children, ...rest }) => (
 Footer.propTypes = {
   theme: PropTypes.shape({}).isRequired,
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 Footer.defaultProps = {
   is: 'footer',
-  children: undefined,
+  children: undefined
 }
 
 export { Footer as component }

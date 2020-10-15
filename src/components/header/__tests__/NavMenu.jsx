@@ -10,22 +10,22 @@ const setup = (testProps = {}) => {
     {
       header: { open: true, collapsable: true },
       transition: 'entered',
-      theme: defaultTheme,
+      theme: defaultTheme
     },
-    testProps,
+    testProps
   )
 
   const wrapper = shallow(
     <NavMenu {...props}>
       <NavItem>About</NavItem>
       <NavItem>Blog</NavItem>
-      <button type="button">Download</button>
-    </NavMenu>,
+      <button type='button'>Download</button>
+    </NavMenu>
   )
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

@@ -7,14 +7,14 @@ import { getUniqueID, filterProps } from '../utils'
 import { Container } from '../container'
 
 class Header extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     const { id, screen } = props
 
     super(props)
 
     this.state = {
       open: false,
-      collapsable: !!screen,
+      collapsable: !!screen
     }
 
     this.mql = null
@@ -24,7 +24,7 @@ class Header extends PureComponent {
     this.handleToggle = this.handleToggle.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     const { theme, screen } = this.props
 
     if (screen && window.matchMedia) {
@@ -37,23 +37,23 @@ class Header extends PureComponent {
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     if (this.mql) this.mql.removeListener(this.handleMatch)
   }
 
-  handleToggle(forceState) {
+  handleToggle (forceState) {
     const { open } = this.state
 
     this.setState({
-      open: forceState || !open,
+      open: forceState || !open
     })
   }
 
-  handleMatch(mql) {
+  handleMatch (mql) {
     this.setState({ collapsable: !mql.matches })
   }
 
-  render() {
+  render () {
     const { open, collapsable } = this.state
     const { theme, is, children, bg, text, screen, ...rest } = this.props
 
@@ -61,12 +61,12 @@ class Header extends PureComponent {
       id: this.id,
       style: {
         bg: bg || theme.brandColors.primary,
-        text: text || theme.textColors.on.primary,
+        text: text || theme.textColors.on.primary
       },
       open,
       collapsable,
       onToggle: this.handleToggle,
-      screen,
+      screen
     }
 
     return (
@@ -76,12 +76,12 @@ class Header extends PureComponent {
         bg={headerProps.style.bg}
         text={headerProps.style.text}
         p={{ y: theme.spacing.md }}
-        role="banner"
+        role='banner'
         {...filterProps(rest, ['id'])}
       >
-        <Container is={Flex} wrap items="center" justify="between" padding>
+        <Container is={Flex} wrap items='center' justify='between' padding>
           {React.Children.map(children, child =>
-            React.cloneElement(child, { header: headerProps }),
+            React.cloneElement(child, { header: headerProps })
           )}
         </Container>
       </Box>
@@ -96,7 +96,7 @@ Header.propTypes = {
   bg: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   id: PropTypes.string,
-  screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  screen: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 }
 
 Header.defaultProps = {
@@ -105,7 +105,7 @@ Header.defaultProps = {
   bg: undefined,
   text: undefined,
   id: undefined,
-  screen: 'lg',
+  screen: 'lg'
 }
 
 export { Header as component }
