@@ -18,7 +18,7 @@ export type ButtonProps = {
   brand?: string
   bg?: string | []
   text?: string | []
-  border?: string | (string | boolean | undefined)[]
+  border?: (string | boolean | undefined)[] | string
   leading?: string
   p?: number | {
     x: string | number
@@ -44,7 +44,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   fullWidth = false,
   bg = undefined,
   text = undefined,
-  border = undefined,
+  border = [],
   brand = undefined,
   ...rest
 }) => {
@@ -76,7 +76,11 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       )
       break
     case 'outline':
-      props.border.push(brand ? theme.brandColors[brand] : border)
+      if (Array.isArray(props.border)) {
+        props.border.push(brand ? theme.brandColors[brand] : border)
+      } else {
+        props.border += brand ? theme.brandColors[brand] : border
+      }
       props.text = brand ? theme.brandColors[brand] : border
       props['bg-hocus'] = brand ? theme.brandColors[brand] : border
       props['text-hocus'] = brand ? theme.textColors.on[brand] : text
@@ -117,8 +121,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     props.w = 'full'
   }
 
+  //inlineBlock
   return (
-    <Touchable inlineBlock {...props} {...rest}>
+    <Touchable {...props} {...rest}>
       {children}
     </Touchable>
   )
