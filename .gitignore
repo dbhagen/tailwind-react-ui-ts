@@ -6,4 +6,4 @@ coverage/
 holding/
 # storybook-static/
 
-packages.json
+package.json
