@@ -3,52 +3,47 @@ import classnames from 'classnames'
 
 import { withTheme } from '../theme'
 import { filterProps } from '../utils'
-import { getTailwindClassNames, tailwindProps, propTypes } from '../tailwind'
+import { getTailwindClassNames, tailwindProps } from '../tailwind'
+import { Class } from 'utility-types'
 
-export interface BaseProps {
-  theme: Object
-  is?: string | Function | Object
-  children: React.ReactNode
-  className: string
-  focusable: boolean
-  innerRef: Function | Object
+export type BaseProps = {
+  theme: any
+  is: string | (() => void) | Class<React.ComponentType>
+  children?: React.ReactNode
+  className?: string
+  innerRef?: (() => void) | Object
 }
-class Base extends React.Component<BaseProps, any> {
-  constructor(props: BaseProps) {
-    super(props)
-  }
 
-  static defaultProps = {
-    is: 'div',
-    children: undefined,
-    className: undefined,
-    innerRef: undefined,
-  }
+const Base: React.FunctionComponent<BaseProps> = ({
+  theme,
+  is = 'div',
+  children = undefined,
+  className = undefined,
+  innerRef = undefined,
+  ...rest
+}) => {
+  const WrappedComponent = is
 
-  render() {
-    const WrappedComponent = this.props.is
-
-    return (
-      <WrappedComponent
-        {...filterProps(rest, tailwindProps)}
-        className={
-          classnames(
-            getTailwindClassNames(
-              {
-                ...rest,
-                'outine-focus': 'none',
-                'shadow-focus': 'outline',
-              },
-              { prefix: theme.prefix },
-            ),
-            className,
-          )}
-        ref={innerRef}
-      >
-        {children}
-      </WrappedComponent >
-    )
-  }
+  return (
+    <WrappedComponent
+      {...filterProps(rest, tailwindProps)}
+      className={
+        classnames(
+          getTailwindClassNames(
+            {
+              ...rest,
+              'outine-focus': 'none',
+              'shadow-focus': 'outline',
+            },
+            { prefix: theme.prefix },
+          ),
+          className,
+        )}
+      ref={innerRef}
+    >
+      {children}
+    </WrappedComponent>
+  )
 }
 
 export { Base as component }

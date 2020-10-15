@@ -1,5 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
-import paramCase from 'param-case'
+import { paramCase } from 'param-case'
 
 import tailwindPropToClassName from './tailwindPropToClassName'
 import tailwindProps, { propVariants } from './tailwindProps'
