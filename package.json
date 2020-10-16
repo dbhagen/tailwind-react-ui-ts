@@ -12,7 +12,7 @@
     "pre-build:docs": "yarn clean:storybook && yarn subtree:add:storybook && yarn pull:storybook",
     "post-build:docs": "yarn commit:storybook && yarn push:storybook",
     "build:storybook": "build-storybook -s public --docs",
-    "clean:storybook": "rm -rf storybook-static || true && mkdir storybook-static",
+    "clean:storybook": "rm -rf storybook-static || true && mkdir storybook-static && cp -r .circleci storybook-static",
     "subtree:add:storybook": "git subtree add --prefix storybook-static $PUSH_DOCS_REPO gh-pages || true",
     "pull:storybook": "git clone --single-branch --branch gh-pages $PUSH_DOCS_REPO storybook-static || true",
     "commit:storybook": "git add storybook-static && git commit -m 'Automated docs generation'",
