@@ -15,7 +15,7 @@
     "storybook:noautoopen": "yarn storybook --ci"
   },
   "gitHooks": {
-    "pre-commit": "yarn lint &"
+    "pre-commit": "yarn lint"
   },
   "keywords": [],
   "author": {
