@@ -55,7 +55,7 @@ jobs:
     steps:
       - run:
           name: Run styleguide generation
-          command: yarn deploy-storybook
+          command: yarn deploy-storybook --remote $PUSH_DOCS_REPO
 
   deploy-and-publish:
     <<: *defaults
@@ -112,7 +112,7 @@ workflows:
       - generate-docs:
           filters:
             branches:
-              only: /^main/
+              only: /^main|conversion/
       - greenkeeperUpdateLockFile:
           filters:
             branches:
