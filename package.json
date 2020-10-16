@@ -7,7 +7,7 @@
   "jsnext:main": "build/index.es.js",
   "scripts": {
     "build": "rm -rf compiled build; tsc && rollup -c",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook": "storybook-to-ghpages -o sb-dist --dry-run --ci && cp -r .circleci sb-dist/ && storybook-to-ghpages -e sb-dist --ci",
     "lint": "standard",
     "format": "prettier-standard --format",
     "test": "jest --coverage",
