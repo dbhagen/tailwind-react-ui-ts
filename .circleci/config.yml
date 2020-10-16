@@ -58,9 +58,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-docs-{{ checksum "package.json" }}
+            - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-docs-
+            - v1-dependencies-
 
       - run:
           name: Install dependencies
@@ -69,11 +69,11 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-docs-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
           name: Run styleguide generation
-          command: yarn deploy-storybook --remote $PUSH_DOCS_REPO --source-branch $CIRCLE_BRANCH
+          command: yarn deploy-storybook -t $GH_REPO_TOKEN --source-branch $CIRCLE_BRANCH
 
   deploy-and-publish:
     <<: *defaults
