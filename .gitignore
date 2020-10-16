@@ -4,6 +4,4 @@ node_modules/
 coverage/
 
 holding/
-# storybook-static/
-
-package.json
+storybook-static/
