@@ -46,23 +46,22 @@ jobs:
           name: Run build
           command: yarn build
 
-      - run:
-          name: Run styleguide generation
-          command: yarn build:storybook
-
       - persist_to_workspace:
           root: ./
           paths: ["."]
+
+  generate-docs:
+    <<: *defaults
+    steps:
+      - run:
+          name: Run styleguide generation
+          command: yarn build:storybook
 
   deploy-and-publish:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ./
-
-      # - run:
-      #     name: Deploy to GitHub
-      #     command: yarn docs:deploy
 
       - run:
           name: Authenticate with registry
@@ -122,3 +121,7 @@ workflows:
               only: /^v.*/
             branches:
               ignore: /.*/
+      - generate-docs:
+          filters:
+            branches:
+              only: /^main/
