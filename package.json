@@ -14,6 +14,9 @@
     "storybook": "start-storybook -p 6060",
     "storybook:noautoopen": "yarn storybook --ci"
   },
+  "gitHooks": {
+    "pre-commit": "yarn lint"
+  },
   "keywords": [],
   "author": {
     "name": "Ernesto Freyre",
@@ -51,7 +54,8 @@
     "standard-prettier": "^1.0.1",
     "ts-jest": "^25.5.1",
     "ts-loader": "^7.0.3",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "yorkie": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^16",
