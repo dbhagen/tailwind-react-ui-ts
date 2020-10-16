@@ -73,7 +73,7 @@ jobs:
 
       - run:
           name: Run styleguide generation
-          command: yarn deploy-storybook -t $GH_REPO_TOKEN
+          command: yarn deploy-storybook -t=GH_REPO_TOKEN
 
   deploy-and-publish:
     <<: *defaults
