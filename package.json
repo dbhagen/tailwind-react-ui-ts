@@ -96,5 +96,10 @@
     "react-transition-group": "^4.4.1",
     "tailwindcss": "^1.9.2",
     "utility-types": "^3.10.0"
+  },
+  "storybook-deployer": {
+    "gitUsername": "Daniel Hagen (Bot)",
+    "gitEmail": "hello@ghbot.com",
+    "commitMessage": "Automated - Deploy Storybook"
   }
 }
