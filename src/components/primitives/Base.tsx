@@ -1,45 +1,44 @@
 import React from 'react'
 import classnames from 'classnames'
 
-// import { withTheme } from '../theme'
-// import { filterProps } from '../utils'
-// import { getTailwindClassNames, tailwindProps } from '../tailwind'
-import { getTailwindClassNames } from '../tailwind'
+import { withTheme } from '../theme'
+import { filterProps } from '../utils'
+import { getTailwindClassNames, tailwindProps } from '../tailwind'
+import { Class } from 'utility-types'
 
-export type BaseType = {
-  theme: Object
-  is: string | React.FunctionComponent | React.Component
-  children?: React.ReactNode | React.ReactNode[]
+export type BaseProps = {
+  theme: any
+  is: string | (() => void) | Class<React.ComponentType>
+  children?: React.ReactNode
   className?: string
-  focusable: boolean
-  innerRef?: Function | Object
+  innerRef?: (() => void) | Object
 }
 
-const Base: React.FunctionComponent<BaseType> = ({
+const Base: React.FunctionComponent<BaseProps> = ({
   theme,
-  is,
-  children,
-  className,
-  focusable,
-  innerRef,
+  is = 'div',
+  children = undefined,
+  className = undefined,
+  innerRef = undefined,
   ...rest
 }) => {
   const WrappedComponent = is
 
   return (
     <WrappedComponent
-      // {...filterProps(rest, tailwindProps)}
-      className={classnames(
-        getTailwindClassNames(
-          {
-            ...rest,
-            'outine-focus': 'none',
-            'shadow-focus': 'outline',
-          },
-          // { prefix: theme.prefix },
-        ),
-        className,
-      )}
+      {...filterProps(rest, tailwindProps)}
+      className={
+        classnames(
+          getTailwindClassNames(
+            {
+              ...rest,
+              'outine-focus': 'none',
+              'shadow-focus': 'outline',
+            },
+            { prefix: theme.prefix },
+          ),
+          className,
+        )}
       ref={innerRef}
     >
       {children}
@@ -48,5 +47,4 @@ const Base: React.FunctionComponent<BaseType> = ({
 }
 
 export { Base as component }
-// export default withTheme(Base)
-export default Base
+export default withTheme(Base)

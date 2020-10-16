@@ -6,7 +6,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import pkg from './package.json'
 
 export default {
-  input: 'src/index.ts',
+  input: 'compiled/lib/index.js',
   output: [
     {
       file: pkg.main,
@@ -27,8 +27,11 @@ export default {
     typescript({
       rollupCommonJSResolveHack: true,
       exclude: [
+        '**/storybook-static/**',
         '**/__tests__/**',
-        '**/*.stories.tsx'
+        '**/*.stories.tsx',
+        '**/*.stories.mdx',
+        '**/*.md'
       ],
       clean: true
     }),

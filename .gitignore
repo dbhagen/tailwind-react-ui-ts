@@ -1,3 +1,5 @@
+compiled/
+build/
 node_modules/
 coverage/
 

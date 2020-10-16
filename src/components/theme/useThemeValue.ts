@@ -1,9 +1,9 @@
 import { tailwindPropToClassName } from '../tailwind'
 
-export default (prefix: string, value: string, userClassNames = '') => {
+export default (prefix: string, values: Object, userClassNames = '') => {
   if (userClassNames.includes(prefix)) {
     return false
   }
 
-  return tailwindPropToClassName(prefix, value)
+  return tailwindPropToClassName(undefined, values, prefix)
 }

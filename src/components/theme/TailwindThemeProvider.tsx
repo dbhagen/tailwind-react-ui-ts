@@ -1,15 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import merge from 'lodash.merge'
 
 import defaultTheme from './defaultTheme'
 import TailwindTheme from './TailwindTheme'
 
-export type TailwindThemeProviderProps = {
-  theme: {}
-  children: React.ReactNode
-}
-
-const TailwindThemeProvider: React.FunctionComponent<TailwindThemeProviderProps> = ({ theme, children }) => {
+// TODO: Remove Any Types
+const TailwindThemeProvider = ({ theme, children }: { theme: any, children: any }) => {
   const mergedTheme = merge({}, defaultTheme, theme)
 
   return (
@@ -17,6 +14,16 @@ const TailwindThemeProvider: React.FunctionComponent<TailwindThemeProviderProps>
       {children}
     </TailwindTheme.Provider>
   )
+}
+
+TailwindThemeProvider.propTypes = {
+  theme: PropTypes.shape({}),
+  children: PropTypes.node,
+}
+
+TailwindThemeProvider.defaultProps = {
+  theme: {},
+  children: undefined,
 }
 
 export default TailwindThemeProvider

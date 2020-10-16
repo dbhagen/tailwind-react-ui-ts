@@ -1,18 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { filterProps } from '../utils'
 
-import tailwindProps from './tailwindProps'
+import tailwindProps, { propTypes } from './tailwindProps'
 import getTailwindClassNames from './getTailwindClassNames'
 
-type withTailwindProps = {
-  ignore: string[]
-}
-
-const withTailwind = <P extends withTailwindProps>(WrappedComponent: React.ComponentType<P & withTailwindProps>, { ignore = [] } = {}) => {
-  const WithTailwind = ({ className, ...props }: { className: string, props: P }) => (
-    <WrappedComponent
+// TODO: Remove Any Types
+const withTailwind = (Component: any, { ignore }: { ignore: any[] } = { ignore: [] }) => {
+  const WithTailwind = ({ className, ...props }: { className: any }) => (
+    <Component
       {...filterProps(
         props,
         tailwindProps.filter(prop => !ignore.includes(prop)),
@@ -24,7 +22,16 @@ const withTailwind = <P extends withTailwindProps>(WrappedComponent: React.Compo
     />
   )
 
-  WithTailwind.displayName = `WithTailwind(${WrappedComponent.displayName})`
+  WithTailwind.displayName = `WithTailwind(${Component.displayName})`
+
+  WithTailwind.propTypes = {
+    className: PropTypes.string,
+    ...propTypes,
+  }
+
+  WithTailwind.defaultProps = {
+    className: undefined,
+  }
 
   return WithTailwind
 }

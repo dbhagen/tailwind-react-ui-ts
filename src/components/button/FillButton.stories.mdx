@@ -1,0 +1,52 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks'
+
+import FillButton from './FillButton'
+
+<Meta title="Components/FillButton" component={FillButton} />
+
+# FillButton
+
+This is the `FillButton`
+
+```tsx
+import { FillButton } from 'my-components'
+
+<List inline padding>
+  <FillButton brand="primary">Primary</FillButton>
+
+  <FillButton brand="secondary">Secondary</FillButton>
+
+  <FillButton brand="danger">Danger</FillButton>
+
+  <FillButton brand="warning">Warning</FillButton>
+
+  <FillButton brand="info">Info</FillButton>
+
+  <FillButton bg="purple-400" text="white">
+    Custom
+  </FillButton>
+</List>
+```
+
+<Preview withSource="open">
+  <Story name="Default">
+    <FillButton brand="primary">
+      Primary
+    </FillButton>
+    <FillButton brand="secondary">
+      Secondary
+    </FillButton>
+    <FillButton brand="danger">
+      Danger
+    </FillButton>
+    <FillButton brand="warning">
+      Warning
+    </FillButton>
+    <FillButton brand="info">
+      Info
+    </FillButton>
+    <FillButton bg="purple-400" text="white">
+      Custom
+    </FillButton>
+  </Story>
+</Preview>

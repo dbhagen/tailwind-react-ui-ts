@@ -1,38 +1,24 @@
-const getArray = (value: [] | any) => (Array.isArray(value) ? value : [value])
+const getArray = (value: any) => (Array.isArray(value) ? value : [value])
 
-type variantType = {
-  utility: string
-  variant?: string
-}
-
-const splitProp = (prop: string): variantType => {
-  const utility: string = prop.substring(prop.indexOf(':') + 1)
+const splitProp = (prop: string) => {
+  const utility = prop.substring(prop.indexOf(':') + 1)
 
   return prop.indexOf(':') !== -1
-    ? { utility: utility, variant: prop.substring(0, prop.indexOf(':')) }
-    : { utility: utility }
+    ? { utility, variant: prop.substring(0, prop.indexOf(':')) }
+    : { utility }
 }
 
-type createClassNameType = (
-  classProps: {
-    utility: string
-    value?: string
-    variant?: string
-    prefix: string
-  }
- ) => string
-
-const createClassName: createClassNameType = ({ utility, value, variant, prefix = '' }) =>
+const createClassName = ({ utility, value, variant, prefix = '' }: { utility?: string, value?: string, variant?: string, prefix?: string }) =>
   `${variant ? `${variant}:` : ''}${prefix}${utility}${
     value !== undefined ? `-${value}` : ''
   }`
 
-export default (prop: string, values: any, prefix:string = '') => {
+export default (prop: string | undefined, values: Object, prefix?: string) => {
   const propType = typeof values
 
   if (!propType) return ''
 
-  const { utility, variant } = splitProp(prop)
+  const { utility, variant } = prop !== undefined ? splitProp(prop) : { utility: undefined, variant: undefined }
 
   if (propType === 'boolean') {
     return createClassName({ utility, variant, prefix })
@@ -51,7 +37,7 @@ export default (prop: string, values: any, prefix:string = '') => {
 
   return getArray(values)
     .map(value => {
-      if (value === false || typeof value === 'undefined') {
+      if (typeof value === 'undefined') {
         return ''
       }
 

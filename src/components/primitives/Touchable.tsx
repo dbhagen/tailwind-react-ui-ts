@@ -2,28 +2,24 @@ import React from 'react'
 
 import Base from './Base'
 
-const focusableElements = ['input', 'select', 'textarea', 'button', 'a']
-
-export interface TouchableProps {
-  // is: string | Function | Object
-  is: string | React.FunctionComponent | React.Component
+export type TouchableProps = {
+  // is: React.ComponentType | React.ComponentClass<{}, any> | React.FunctionComponent<{}> | string
+  is: string
   children?: React.ReactNode
-  // select: string
-  tabIndex?: number
   disabled?: boolean
-  // onTouch?: (event?: React.KeyboardEvent) => {}
+  tabIndex?: number
   onTouch?: Function
 }
+const focusableElements = ['input', 'select', 'textarea', 'button', 'a']
 
-class Touchable extends React.PureComponent<TouchableProps> {
-  static TouchableProps = {
+export class Touchable extends React.PureComponent<TouchableProps> {
+  static defaultProps = {
     is: 'button',
-    Children: undefined,
+    children: undefined,
     disabled: false,
     tabIndex: undefined,
-    onTouch: undefined
+    onTouch: undefined,
   }
-
   constructor(props: TouchableProps) {
     super(props)
 

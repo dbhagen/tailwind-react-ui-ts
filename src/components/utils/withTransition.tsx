@@ -2,17 +2,15 @@ import React from 'react'
 import { Transition } from 'react-transition-group'
 import get from 'lodash.get'
 
-type withThemeProps = {
-  inState: boolean
-}
-
-const withTheme = <P extends withThemeProps>(WrappedComponent: React.ComponentType<P & withThemeProps>, { inState, ...rest }: { instate: string[] | number[] | symbol[], [x: string]: any; }) => {
-  const WithTransition = (componentProps: P) =>
+// TODO: Remove Any Types
+const withTheme = (Component: any, { inState, ...rest }: { inState: any }) => {
+  const WithTransition = (componentProps: any) => (
     <Transition in={get(componentProps, inState)} timeout={0} {...rest}>
-      {state => <WrappedComponent {...componentProps} transition={state} />}
+      {state => <Component {...componentProps} transition={state} />}
     </Transition>
+  )
 
-  WithTransition.displayName = `WithTransition(${WrappedComponent.displayName})`
+  WithTransition.displayName = `WithTransition(${Component.displayName})`
 
   return WithTransition
 }
