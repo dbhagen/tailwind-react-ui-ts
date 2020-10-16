@@ -4,4 +4,4 @@ node_modules/
 coverage/
 
 holding/
-storybook-static/
+# storybook-static/
