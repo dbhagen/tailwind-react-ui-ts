@@ -55,7 +55,7 @@ jobs:
     steps:
       - run:
           name: Run styleguide generation
-          command: yarn build:storybook
+          command: yarn deploy-storybook
 
   deploy-and-publish:
     <<: *defaults
