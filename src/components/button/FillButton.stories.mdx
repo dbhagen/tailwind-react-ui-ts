@@ -4,32 +4,29 @@ import FillButton from './FillButton'
 
 <Meta title="Components/FillButton" component={FillButton} />
 
+export const Template = ({label = 'test', ...args}) => (
+  <FillButton {...args}>
+    {label}
+  </FillButton>
+)
+
 # FillButton
 
 This is the `FillButton`
 
 ```tsx
-import { FillButton } from 'my-components'
+import { FillButton } from 'tailwind-react-ui-ts'
 
-<List inline padding>
-  <FillButton brand="primary">Primary</FillButton>
-
-  <FillButton brand="secondary">Secondary</FillButton>
-
-  <FillButton brand="danger">Danger</FillButton>
-
-  <FillButton brand="warning">Warning</FillButton>
-
-  <FillButton brand="info">Info</FillButton>
-
-  <FillButton bg="purple-400" text="white">
-    Custom
-  </FillButton>
-</List>
+<FillButton brand="primary">Primary</FillButton>
 ```
 
-<Preview withSource="open">
-  <Story name="Default">
+<Preview>
+  <Story name="Default" args={{
+    brand: 'primary'
+  }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Color variations">
     <FillButton brand="primary">
       Primary
     </FillButton>
