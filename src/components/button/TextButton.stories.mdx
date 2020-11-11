@@ -1,0 +1,49 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks'
+
+import TextButton from './TextButton'
+
+<Meta title="Components/Buttons/TextButton" component={TextButton} />
+
+export const Template = ({label = 'test', ...args}) => (
+  <TextButton {...args}>
+    {label}
+  </TextButton>
+)
+
+# TextButton
+
+This is the `TextButton`
+
+```tsx
+import { TextButton } from 'tailwind-react-ui-ts'
+
+<TextButton brand="primary">Primary</TextButton>
+```
+
+<Preview>
+  <Story name="Default" args={{
+    brand: 'primary'
+  }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Color variations">
+    <TextButton brand="primary">
+      Primary
+    </TextButton>
+    <TextButton brand="secondary">
+      Secondary
+    </TextButton>
+    <TextButton brand="danger">
+      Danger
+    </TextButton>
+    <TextButton brand="warning">
+      Warning
+    </TextButton>
+    <TextButton brand="info">
+      Info
+    </TextButton>
+    <TextButton bg="purple-400" text="white">
+      Custom
+    </TextButton>
+  </Story>
+</Preview>

@@ -8,13 +8,6 @@ module.exports = {
         babelOptions: {},
         sourceLoaderOptions: null,
       }
-    },
-    '@storybook/addon-viewport',
-    {
-      name: '@storybook/addon-a11y',
-      options: {
-
-      }
     }
   ]
 }

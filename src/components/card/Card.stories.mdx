@@ -1,0 +1,64 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks'
+
+import Card from './Card'
+
+<Meta title="Components/Card/Card" component={Card} />
+
+Standard card functionality made up of:
+
+- `<Card />` &mdash; wrapping component with overflow hidden to allow for full size image headers
+- `<CardBody />` &mdash; padded element for main content of the card
+- `<CardFooter />` &mdash; right aligns, reverses order & squares corners of elements to have CTAs in priority tab order
+
+### Simple Example
+
+```tsx
+import { Card } from 'my-components'
+
+<Card>
+  <CardBody>
+    <p>Hello World</p>
+  </CardBody>
+</Card>
+```
+
+### Full Example
+
+```tsx
+<Card border shadow maxW="sm">
+  <Image
+    src="https://placekitten.com/1280/960"
+    alt="Example image"
+    aspectRatio={1280 / 960}
+  />
+  <CardBody>Hello World</CardBody>
+  <CardFooter>
+    <FillButton brand="primary">Read</FillButton>
+    <OutlineButton brand="primary">Bookmark</OutlineButton>
+  </CardFooter>
+</Card>
+```
+
+<Preview withSource="open">
+  <Story name="Default">
+    <Card>
+      <CardBody>
+        <p>Hello World</p>
+      </CardBody>
+    </Card>
+  </Story>
+  <Story name="Full Example">
+    <Card border shadow maxW="sm">
+      <img
+        src="https://placekitten.com/1280/960"
+        alt="Example image"
+        aspectRatio={1280 / 960}
+      />
+      <CardBody>Hello World</CardBody>
+      <CardFooter>
+        <FillButton brand="primary">Read</FillButton>
+        <OutlineButton brand="primary">Bookmark</OutlineButton>
+      </CardFooter>
+    </Card>
+  </Story>
+</Preview>

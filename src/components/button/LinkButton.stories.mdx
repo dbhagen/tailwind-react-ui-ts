@@ -1,0 +1,49 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks'
+
+import LinkButton from './LinkButton'
+
+<Meta title="Components/Buttons/LinkButton" component={LinkButton} />
+
+export const Template = ({label = 'test', ...args}) => (
+  <LinkButton {...args}>
+    {label}
+  </LinkButton>
+)
+
+# LinkButton
+
+This is the `LinkButton`
+
+```tsx
+import { LinkButton } from 'tailwind-react-ui-ts'
+
+<LinkButton brand="primary">Primary</LinkButton>
+```
+
+<Preview>
+  <Story name="Default" args={{
+    brand: 'primary'
+  }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Color variations">
+    <LinkButton brand="primary">
+      Primary
+    </LinkButton>
+    <LinkButton brand="secondary">
+      Secondary
+    </LinkButton>
+    <LinkButton brand="danger">
+      Danger
+    </LinkButton>
+    <LinkButton brand="warning">
+      Warning
+    </LinkButton>
+    <LinkButton brand="info">
+      Info
+    </LinkButton>
+    <LinkButton bg="purple-400" text="white">
+      Custom
+    </LinkButton>
+  </Story>
+</Preview>

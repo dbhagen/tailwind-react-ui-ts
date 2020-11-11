@@ -1,0 +1,49 @@
+import {Meta, Story, Preview, Props} from '@storybook/addon-docs/blocks'
+
+import OutlineButton from './OutlineButton'
+
+<Meta title="Components/Buttons/OutlineButton" component={OutlineButton} />
+
+export const Template = ({label = 'test', ...args}) => (
+  <OutlineButton {...args}>
+    {label}
+  </OutlineButton>
+)
+
+# OutlineButton
+
+This is the `OutlineButton`
+
+```tsx
+import { OutlineButton } from 'tailwind-react-ui-ts'
+
+<OutlineButton brand="primary">Primary</OutlineButton>
+```
+
+<Preview>
+  <Story name="Default" args={{
+    brand: 'primary'
+  }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Color variations">
+    <OutlineButton brand="primary">
+      Primary
+    </OutlineButton>
+    <OutlineButton brand="secondary">
+      Secondary
+    </OutlineButton>
+    <OutlineButton brand="danger">
+      Danger
+    </OutlineButton>
+    <OutlineButton brand="warning">
+      Warning
+    </OutlineButton>
+    <OutlineButton brand="info">
+      Info
+    </OutlineButton>
+    <OutlineButton bg="purple-400" text="white">
+      Custom
+    </OutlineButton>
+  </Story>
+</Preview>
