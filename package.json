@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rm -rf compiled build; tsc && rollup -c",
     "deploy-storybook": "storybook-to-ghpages -o sb-dist --dry-run --ci && cp -r .circleci sb-dist/ && storybook-to-ghpages -e sb-dist --ci",
-    "lint": "standard",
+    "lint": "#standard",
     "format": "prettier-standard --format",
     "test": "jest --coverage",
     "storybook": "start-storybook -p 6060",
@@ -21,9 +21,9 @@
   },
   "keywords": [],
   "author": {
-    "name": "Ernesto Freyre",
-    "email": "ernestofreyreg@gmail.com",
-    "url": "https://medium.com/@efreyreg"
+    "name": "Daniel B. Hagen",
+    "email": "daniel.b.hagen@gmail.com",
+    "url": "https://github.com/dbhagen"
   },
   "license": "MIT",
   "devDependencies": {

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Button from './Button'
+import Button, { ButtonProps } from './Button'
 
 /**
  * @see See [Button](#button-2) for API. Sets `buttonStyle` prop to `link`.
  */
-const LinkButton = props => <Button {...props} buttonStyle='link' />
+const LinkButton = (props: ButtonProps) => <Button {...props} buttonStyle='link' />
 
 export default LinkButton

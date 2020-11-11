@@ -1,9 +1,21 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Class } from 'utility-types'
 
 import Box from './Box'
 
-const Flex = ({
+export type FlexProps = {
+  is: string | (() => void) | Class<React.ComponentType>
+  children?: React.ReactNode
+  inline?: boolean
+  inlineFlex?: boolean
+  col?: boolean
+  reverse?: boolean
+  wrap?: boolean
+  wrapReverse?: boolean
+  items: any
+}
+
+const Flex: React.FunctionComponent<FlexProps> = ({
   is,
   children,
   inline,
@@ -16,7 +28,7 @@ const Flex = ({
 }) => {
   const el = is === 'div' && (inline || inlineFlex) ? 'span' : is
 
-  const flex = [true]
+  const flex = ['true']
 
   if (col) {
     flex.push(reverse ? 'col-reverse' : 'col')
@@ -35,26 +47,15 @@ const Flex = ({
   )
 }
 
-Flex.propTypes = {
-  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
-  children: PropTypes.node,
-  inline: PropTypes.bool,
-  inlineFlex: PropTypes.bool,
-  col: PropTypes.bool,
-  reverse: PropTypes.bool,
-  wrap: PropTypes.bool,
-  wrapReverse: PropTypes.bool
-}
-
-Flex.defaultProps = {
-  is: 'div',
-  children: undefined,
-  inline: false,
-  inlineFlex: false,
-  col: false,
-  reverse: false,
-  wrap: false,
-  wrapReverse: false
-}
+// Flex.defaultProps = {
+//   is: 'div',
+//   children: undefined,
+//   inline: false,
+//   inlineFlex: false,
+//   col: false,
+//   reverse: false,
+//   wrap: false,
+//   wrapReverse: false
+// }
 
 export default Flex

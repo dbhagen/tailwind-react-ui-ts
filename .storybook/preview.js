@@ -6,10 +6,10 @@ import { withThemePlayground } from 'storybook-addon-theme-playground';
 import { theme } from '../tailwind.config';
 
 export const decorators = [
-  withThemePlayground({
-    theme,
-    provider: ThemeProvider,
-  }),
+  // withThemePlayground({
+  //   theme,
+  //   provider: ThemeProvider,
+  // }),
 ];
 
 addDecorator(withA11y);
